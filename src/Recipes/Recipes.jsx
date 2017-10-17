@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, Image, Button, Label } from 'semantic-ui-react'
+import { Card, Image, Button, Label } from 'semantic-ui-react'
 
 class Recipes extends Component {
   constructor (props) {

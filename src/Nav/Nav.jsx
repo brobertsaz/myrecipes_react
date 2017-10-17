@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react'
+import App from '../App'
+import Recipes from '../Recipes/Recipes'
 
 class Nav extends Component {
   constructor (props) {
