@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Card, Icon, Image, Container, Button } from 'semantic-ui-react'
 
 class App extends Component {
   constructor (props) {
@@ -35,9 +34,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Container>
+          <Card.Group itemsPerRow={4}>
           {this.state.recipes.map((recipe, i) => (
-            <h4 key={i}>{ recipe.url }</h4>
+            <Card color='red' key={i}>
+            <Image src={recipe.image} />
+            <Card.Content>
+              <Card.Header>{recipe.label}</Card.Header>
+              <Card.Meta>{recipe.source}</Card.Meta>
+              <Card.Description>{recipe.description}</Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <p>Calories {recipe.calories}</p>
+              <p>Yields {recipe.yield}</p>
+              <div className='ui two buttons'>
+                <Button basic color='green'>Favorite</Button>
+                <Button basic color='blue'>View</Button>
+              </div>
+            </Card.Content>
+            </Card>
           ))}
+          </Card.Group>
+        </Container>
       </div>
     );
   }
