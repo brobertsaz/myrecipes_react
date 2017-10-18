@@ -25,7 +25,7 @@ class Recipes extends Component {
   }
 
   getRecipes () {
-    this.fetch('recipes')
+    this.fetch('https://my-recipesapp.herokuapp.com/recipes')
       .then(recipes => {
         this.setState({recipes: recipes})
       })
