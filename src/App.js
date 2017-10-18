@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css'
-import Login from './Login/Login'
 import { Container, Search, Grid } from 'semantic-ui-react'
 
 const DEFAULT_QUERY = 'chicken'
@@ -30,11 +29,10 @@ class App extends Component {
 
   componentDidMount() {
     const { searchTerm } = this.state
-    this.fetchSearchTopRecipes(searchTerm)
+    // this.fetchSearchTopRecipes(searchTerm)
   }
 
   fetchSearchTopRecipes(searchTerm) {
-    // curl "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}
     fetch(`${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}`)
       .then(response => response.json())
       .then(result => this.setSearchTopRecipes(result))
@@ -51,8 +49,8 @@ class App extends Component {
 
   setSearchTopRecipes(result) {
     this.setState({ result })
+    console.log(result)
   }
-
 
   render() {
     const { searchTerm, isLoading } = this.state
