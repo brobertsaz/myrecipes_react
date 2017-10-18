@@ -1,16 +1,12 @@
-.App {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.App .menu {
+#root .menu {
   height: 50px;
 }
 
 .container {
-  padding-top: 30px;
+  margin: 30px 40px 0 40px;
 }
 
-.App .ui.menu {
+#root .ui.menu {
   font-size: 1.2rem;
   border-radius: 0;
 }

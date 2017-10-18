@@ -35,7 +35,7 @@ class Recipes extends Component {
     const { recipes } = this.state
 
     return (
-      <div>
+      <div className="container">
         <Card.Group itemsPerRow={4}>
         {recipes.map((recipe, i) => (
           <Card color='red' key={i}>
@@ -46,8 +46,9 @@ class Recipes extends Component {
             <Card.Description>{recipe.description}</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <p>Calories <Label color='red'>{recipe.calories}</Label></p>
-            <p>Yields <Label color='green'>{recipe.yield}</Label></p>
+            <span>Calories <Label color='red'>{recipe.calories}</Label></span>
+            <br />
+            <span>Yields <Label color='green'>{recipe.yield}</Label></span>
             <div className='ui two buttons'>
               <Button basic color='green'>Favorite</Button>
               <Button basic color='blue'>View</Button>
